@@ -8,12 +8,12 @@ pipe.load_lora_weights("Remilistrasza/NSFW_LoRAs", weight_name="nudify_xl.safete
 
 def invoke(input_text):
     prompt = input_text
-    prompt = '''cinematic photo, highres, photorealistic,
-    beautiful korean woman, nude, large breasts,
-    black hair, smile, cute girl, eyelashes,
-    hand on hip, topless, choker, black thighhighs, socks,
-    bedroom, studio lighting, hard shadows, sunset,
-    <lora:nudify:1>'''
+    # prompt = '''cinematic photo, highres, photorealistic,
+    # beautiful korean woman, nude, large breasts,
+    # black hair, smile, cute girl, eyelashes,
+    # hand on hip, topless, choker, black thighhighs, socks,
+    # bedroom, studio lighting, hard shadows, sunset,
+    # <lora:nudify:1>'''
     negative_prompt = '''blurry, painting, drawing, cartoon, rendered, 
     cgi, 3d, anime, sketch, (worst quality:2), (low quality:2), 
     (normal quality:2), (bad quality:2), dot, mole, monochrome, 
