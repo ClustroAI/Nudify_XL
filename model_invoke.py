@@ -5,6 +5,7 @@ pipe_id = "stabilityai/stable-diffusion-xl-base-1.0"
 pipe = DiffusionPipeline.from_pretrained(pipe_id, torch_dtype=torch.float16).to("cuda")
 
 pipe.load_lora_weights("Remilistrasza/NSFW_LoRAs", weight_name="nudify_xl.safetensors", revision="Nudify_XL")
+pipe.safety_checker = None
 
 def invoke(input_text):
     prompt = input_text
