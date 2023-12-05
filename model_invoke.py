@@ -2,9 +2,18 @@ from diffusers import DiffusionPipeline
 import torch
 
 pipe_id = "stabilityai/stable-diffusion-xl-base-1.0"
-pipe = DiffusionPipeline.from_pretrained(pipe_id, torch_dtype=torch.float16).to("cuda")
+pipe = DiffusionPipeline.from_pretrained(
+    pipe_id, 
+    torch_dtype=torch.float16,
+    revision="462165984030d82259a11f4367a4eed129e94a7b"
+).to("cuda")
 
-pipe.load_lora_weights("Remilistrasza/NSFW_LoRAs", weight_name="nudify_xl.safetensors", revision="Nudify_XL")
+pipe.load_lora_weights(
+    "Remilistrasza/NSFW_LoRAs", 
+    weight_name="nudify_xl.safetensors", 
+    # revision="Nudify_XL",
+    revision="d5bc6f2cc7f6263e0673e34039adfd6e7bad0907"
+)
 pipe.safety_checker = None
 
 def invoke(input_text):
